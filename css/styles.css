@@ -59,19 +59,26 @@ header {
     border-radius: 5px;
     transition: all 0.3s ease;
 }
-/* Dropdown Menu */
+/* Sliding Dropdown Menu */
 .dropdown-menu {
-    display: none; /* Hidden by default */
+    position: fixed;
+    left: -100%; /* Start off-screen */
+    top: 0;
+    width: 250px;
+    height: 100%;
     background-color: #222;
-    padding: 10px 0;
-    position: absolute;
-    width: 100%;
-    top: 60px;
-    left: 0;
-    text-align: center;
-    z-index: 1;
+    transition: left 0.3s ease; /* Smooth sliding effect */
+    z-index: 1000;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* One column layout */
+    align-content: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow for better appearance */
 }
-
+/* Active State */
+.dropdown-menu.active {
+    left: 0; /* Slide into view */
+}
 .dropdown-menu ul {
     list-style: none;
     padding: 0;
@@ -96,6 +103,7 @@ header {
     padding: 10px;
     border-radius: 5px; /* Optional: adds a rounded effect */
 }
+
 /*search icon */
 .search-icon {
     font-size: 1.2rem;
