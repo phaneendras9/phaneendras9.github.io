@@ -85,6 +85,7 @@ header {
     list-style: none;
     padding: 0;
     margin: 20px 0;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     gap: 15px; /* Space between menu items */
