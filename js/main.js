@@ -1,10 +1,11 @@
-// JavaScript to toggle dropdown menu
-document.getElementById('hamburger').addEventListener('click', () => {
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.getElementById('hamburger');
     const dropdownMenu = document.getElementById('dropdown-menu');
-    if (dropdownMenu.style.display === 'block') {
-        dropdownMenu.style.display = 'none';
-    } else {
-        dropdownMenu.style.display = 'block';
+    
+    if (hamburger && dropdownMenu) {
+        hamburger.addEventListener('click', () => {
+            dropdownMenu.style.display = dropdownMenu.style.display === 'block' ? 'none' : 'block';
+        });
     }
 });
 
