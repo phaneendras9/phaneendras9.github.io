@@ -33,7 +33,7 @@ header {
     align-items: center;
 }
 
-.hamburger-menu {
+/* .hamburger-menu {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -41,6 +41,14 @@ header {
     height: 20px;
     cursor: pointer;
     margin-right: 20px;
+} */
+
+.hamburger-menu {
+    display: flex !important;
+    position: relative;
+    z-index: 2; /* Ensures it is on top */
+    background-color: #444; /* Temporary background to make it easier to spot */
+    padding: 5px;
 }
 
 .hamburger-menu span {
