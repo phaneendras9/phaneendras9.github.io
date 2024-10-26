@@ -1,1 +1,141 @@
 
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+}
+
+/* Navigation */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+header ul {
+    list-style: none;
+    display: flex;
+}
+
+header ul li {
+    margin-left: 20px;
+}
+
+header ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+header ul li a:hover {
+    color: #f3c623;
+}
+
+/* Hero Section */
+.hero {
+    background: url('../images/background.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero .overlay {
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    padding: 20px;
+}
+
+.hero .btn {
+    background: #f3c623;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.hero .btn:hover {
+    background: #fff;
+}
+
+/* About Section */
+#about {
+    padding: 50px 0;
+    background: #fff;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.about-content img {
+    width: 300px;
+    border-radius: 50%;
+}
+
+/* Projects Section */
+#projects {
+    background: #f9f9f9;
+    padding: 50px 0;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    width: 80%;
+    margin: auto;
+}
+
+.slide {
+    min-width: 100%;
+    transition: 0.5s;
+    text-align: center;
+}
+
+/* Contact Section */
+#contact {
+    background: #333;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#contact .btn {
+    background: #f3c623;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #bbb;
+    padding: 10px 0;
+    text-align: center;
+}
