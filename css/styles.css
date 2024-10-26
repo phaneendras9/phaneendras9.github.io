@@ -54,50 +54,58 @@ header {
     transition: all 0.3s ease;
 }
 
-/* Sliding Dropdown Menu */
-.dropdown-menu {
+/* Slider Menu */
+.slider-menu {
     position: fixed;
     left: -100%; /* Start off-screen */
     top: 0;
-    width: 250px;
+    width: 250px; /* Adjust width as needed */
     height: 100%;
-    background-color: #222;
+    background-color: #222; /* Dark background for the slider */
     transition: left 0.3s ease; /* Smooth sliding effect */
-    z-index: 1000;
+    z-index: 1500; /* Ensures it's layered correctly */
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(1, 1fr); /* One column layout */
-    align-content: center;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow for better appearance */
 }
-/* Active State */
-.dropdown-menu.active {
+
+/* Active State to Slide the Menu into View */
+.slider-menu.active {
     left: 0; /* Slide into view */
 }
-.dropdown-menu ul {
+
+/* Slider Header: Contains Close Button */
+.slider-menu .slider-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Navigation Links in Slider */
+.slider-menu nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between menu items */
 }
 
-.dropdown-menu li {
-    padding: 10px 0;
-}
-
-.dropdown-menu li a {
-    color: #fff;
+.slider-menu nav li a {
+    color: #fff; /* Menu item text color */
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s;
 }
 
-/* Hover effect */
-.dropdown-menu li a:hover {
+/* Hover effect for Slider Menu */
+.slider-menu nav li a:hover {
     background-color: #f3c623; /* Changes background on hover */
     color: #333; /* Changes text color on hover */
     padding: 10px;
-    border-radius: 5px; /* Optional: adds a rounded effect */
+    border-radius: 5px; /* Optional rounded effect */
 }
+
+
 
 /*search icon */
 .search-icon {
