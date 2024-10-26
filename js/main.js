@@ -1,18 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
-    const dropdownMenu = document.getElementById('dropdown-menu');
+    const sliderMenu = document.getElementById('slider-menu');
+    const closeSlider = document.getElementById('close-slider');
 
-    // Toggle the dropdown menu
-    if (hamburger && dropdownMenu) {
-        hamburger.addEventListener('click', () => {
-            dropdownMenu.classList.toggle('active'); // Slide in/out
-        });
+    // Open slider menu when hamburger is clicked
+    hamburger.addEventListener('click', () => {
+        sliderMenu.classList.add('active');
+    });
 
-        // Close the menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!dropdownMenu.contains(event.target) && !hamburger.contains(event.target)) {
-                dropdownMenu.classList.remove('active'); // Close if clicked outside
-            }
-        });
-    }
+    // Close slider menu when close button or outside area is clicked
+    closeSlider.addEventListener('click', () => {
+        sliderMenu.classList.remove('active');
+    });
+
+    // Close slider menu when clicking outside of it
+    document.addEventListener('click', (event) => {
+        if (!sliderMenu.contains(event.target) && !hamburger.contains(event.target)) {
+            sliderMenu.classList.remove('active');
+        }
+    });
 });
