@@ -28,7 +28,7 @@ header {
     margin: 0 auto;
 }
 
-/* Left Section (Hamburger + Search Icon) */
+/* Left Section (Hamburger ) */
 .left-section {
     display: flex;
     align-items: center;
@@ -118,12 +118,7 @@ header {
     border-radius: 5px; /* Optional rounded effect */
 }
 
-/* Search Icon */
-.search-icon {
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: #fff;
-}
+
 
 /* Center Section (Title and Designation) */
 .center-section {
