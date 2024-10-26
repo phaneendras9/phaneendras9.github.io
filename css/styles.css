@@ -59,7 +59,7 @@ header {
     position: fixed;
     left: -100%; /* Start off-screen */
     top: 0;
-    width: 250px; /* Adjust width as needed */
+    width: 200px; /* Adjust width as needed */
     height: 100%;
     background-color: #222; /* Dark background for the slider */
     transition: left 0.3s ease; /* Smooth sliding effect */
@@ -84,7 +84,7 @@ header {
 
 /* Adjust top space for slider content */
 .slider-menu nav {
-    margin-top: 20px; /* Add space below the hamburger */
+    margin-top: 10px; /* Add space below the hamburger */
     flex: 1; /* Allow the nav to take up most of the slider */
     display: flex;
     flex-direction: column;
