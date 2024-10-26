@@ -81,8 +81,12 @@ header {
     transition: color 0.3s;
 }
 
+/* Hover effect */
 .dropdown-menu li a:hover {
-    color: #f3c623;
+    background-color: #f3c623; /* Changes background on hover */
+    color: #333; /* Changes text color on hover */
+    padding: 10px;
+    border-radius: 5px; /* Optional: adds a rounded effect */
 }
 /*search icon */
 .search-icon {
