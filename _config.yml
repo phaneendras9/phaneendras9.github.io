@@ -1,10 +1,12 @@
-title: Phaneendra Siddana's Portfolio
-description: Full Stack Java Developer
-theme: jekyll-theme-cayman  # Choose the theme you like
+title: "Phaneendra Siddana's Portfolio"
+description: "Experienced Full Stack Java Developer specializing in scalable solutions"
+theme: jekyll-theme-minimal
 baseurl: ""
-url: "https://phaneendras9.github.io"  # Update with your GitHub Pages URL
-
-# Social Links
+url: "https://phaneendras9.github.io"
+email: "siddanaphaneendra9@gmail.com"
 social_links:
   linkedin: "https://www.linkedin.com/in/sphanee/"
-  github: "https://github.com/phaneendras9/"
+  github: "https://github.com/phaneendras9"
+
+# Additional configuration
+author: "Phaneendra Siddana"
