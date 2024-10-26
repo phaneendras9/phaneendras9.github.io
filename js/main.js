@@ -14,4 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
             sliderMenu.classList.remove('active'); // Remove the 'active' class to close the slider
         }
     });
+
+    // Close slider when any link inside it is clicked
+    sliderMenu.addEventListener('click', (event) => {
+        if (event.target.tagName === 'A') {
+            sliderMenu.classList.remove('active');
+        }
+    });
 });
