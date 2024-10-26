@@ -66,6 +66,8 @@ header {
     z-index: 2000; /* Ensures it's layered correctly */
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow for better appearance */
+    display: flex; /* Make slider a flex container */
+    flex-direction: column; /* Stack content vertically */
 }
 
 /* Active State to Slide the Menu into View */
@@ -80,15 +82,25 @@ header {
     align-items: center;
 }
 
+/* Adjust top space for slider content */
+.slider-menu nav {
+    margin-top: 20px; /* Add space below the hamburger */
+    flex: 1; /* Allow the nav to take up most of the slider */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center navigation links vertically */
+}
+
 /* Navigation Links in Slider */
 .slider-menu nav ul {
     list-style: none;
     padding: 0;
-    margin: 20px 0;
-    margin-top: 60px;
+    margin: 0;
+    margin-top: 60px; /* Space below hamburger */
     display: flex;
     flex-direction: column;
-    gap: 15px; /* Space between menu items */
+    gap: 20px; /* Increased space between menu items */
+    align-items: flex-start; /* Align items to the start */
 }
 
 .slider-menu nav li a {
@@ -96,13 +108,13 @@ header {
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s;
+    padding: 10px 15px; /* Add padding for better click area */
 }
 
 /* Hover effect for Slider Menu */
 .slider-menu nav li a:hover {
     background-color: #f3c623; /* Changes background on hover */
     color: #333; /* Changes text color on hover */
-    padding: 10px;
     border-radius: 5px; /* Optional rounded effect */
 }
 
