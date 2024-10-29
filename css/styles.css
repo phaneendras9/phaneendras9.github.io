@@ -150,7 +150,7 @@ header {
 
 /* About Section */
 #about {
-    padding-top: 100px; /* Adjust to match header height */
+    padding-top: 100px;
     background-color: #f4f4f9;
     padding-bottom: 50px;
 }
@@ -163,35 +163,45 @@ header {
     margin: 0 auto;
     padding: 20px;
     gap: 40px;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
 }
 
+/* Left Part: Profile Image */
 .photo-section .profile-photo {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 4px solid #f3c623; /* Colorful border for profile picture */
 }
 
+/* Right Part: Details Section */
 .details-section {
     max-width: 600px;
+    color: #333;
 }
 
 .details-section h2 {
     font-size: 2rem;
-    color: #333;
+    color: #3a3a3a;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 
 .quote {
     font-style: italic;
-    color: #555;
+    color: #f3c623; /* Colorful quote text */
     font-size: 1.2rem;
     margin-bottom: 15px;
+    border-left: 4px solid #f3c623;
+    padding-left: 10px;
 }
 
 .description {
-    color: #333;
+    color: #555;
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 15px;
@@ -237,6 +247,7 @@ header {
     align-items: center;
     color: #0077b5;
     font-size: 1rem;
+    font-weight: 600;
     text-decoration: none;
     margin-top: 20px;
     transition: color 0.3s;
@@ -284,7 +295,7 @@ header {
     }
 
     .photo-section .profile-photo {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
 }
