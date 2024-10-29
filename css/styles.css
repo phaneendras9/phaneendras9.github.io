@@ -8,6 +8,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: #f9f9f9;
+    scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
 }
 
 /* Header Styles */
@@ -16,19 +17,22 @@ header {
     color: #fff;
     padding: 15px 0;
     border-bottom: 2px solid #f3c623;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: nowrap; /* Prevents wrapping */
+    flex-wrap: nowrap;
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Left Section (Hamburger ) */
+/* Left Section (Hamburger Menu) */
 .left-section {
     display: flex;
     align-items: center;
@@ -38,18 +42,18 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 30px; /* Slightly increased width for better visibility */
-    height: 25px; /* Slightly increased height */
+    width: 30px;
+    height: 25px;
     cursor: pointer;
     margin-right: 20px;
-    z-index: 3000; /* Ensure it's on top */
+    z-index: 3000;
 }
 
 .hamburger-menu span {
     display: block;
     width: 100%;
-    height: 4px; /* Slightly increased height */
-    background-color: #fff; /* Adjust color to be visible */
+    height: 4px;
+    background-color: #fff;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
@@ -59,18 +63,18 @@ header {
     position: fixed;
     left: -100%; /* Start off-screen */
     top: 0;
-    width: 200px; /* Adjust width as needed */
+    width: 200px;
     height: 100%;
-    background-color: #222; /* Dark background for the slider */
-    transition: left 0.3s ease; /* Smooth sliding effect */
-    z-index: 2000; /* Ensures it's layered correctly */
+    background-color: #222;
+    transition: left 0.3s ease;
+    z-index: 2000;
     padding: 20px;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5); /* Shadow for better appearance */
-    display: flex; /* Make slider a flex container */
-    flex-direction: column; /* Stack content vertically */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
 }
 
-/* Active State to Slide the Menu into View */
+/* Active State for Slider Menu */
 .slider-menu.active {
     left: 0; /* Slide into view */
 }
@@ -84,41 +88,37 @@ header {
 
 /* Adjust top space for slider content */
 .slider-menu nav {
-    margin-top: 10px; /* Add space below the hamburger */
-    flex: 1; /* Allow the nav to take up most of the slider */
+    margin-top: 10px;
+    flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Center navigation links vertically */
+    justify-content: center;
 }
 
 /* Navigation Links in Slider */
 .slider-menu nav ul {
     list-style: none;
     padding: 0;
-    margin: 0;
-    margin-top: 60px; /* Space below hamburger */
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Increased space between menu items */
-    align-items: flex-start; /* Align items to the start */
+    gap: 20px;
+    align-items: flex-start;
 }
 
 .slider-menu nav li a {
-    color: #fff; /* Menu item text color */
+    color: #fff;
     text-decoration: none;
     font-size: 1.2rem;
     transition: color 0.3s;
-    padding: 10px 15px; /* Add padding for better click area */
+    padding: 10px 15px;
 }
 
-/* Hover effect for Slider Menu */
 .slider-menu nav li a:hover {
-    background-color: #f3c623; /* Changes background on hover */
-    color: #333; /* Changes text color on hover */
-    border-radius: 5px; /* Optional rounded effect */
+    background-color: #f3c623;
+    color: #333;
+    border-radius: 5px;
 }
-
-
 
 /* Center Section (Title and Designation) */
 .center-section {
@@ -148,6 +148,108 @@ header {
     color: #f3c623;
 }
 
+/* About Section */
+#about {
+    padding-top: 100px; /* Adjust to match header height */
+    background-color: #f4f4f9;
+    padding-bottom: 50px;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 40px;
+}
+
+.photo-section .profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details-section {
+    max-width: 600px;
+}
+
+.details-section h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.quote {
+    font-style: italic;
+    color: #555;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.description {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Interests in About Section */
+.interests-section h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.interests-section p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.interests-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.interests-list li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1rem;
+    color: #333;
+    background: #f3f3f3;
+    padding: 8px 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* LinkedIn Button */
+.linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    color: #0077b5;
+    font-size: 1rem;
+    text-decoration: none;
+    margin-top: 20px;
+    transition: color 0.3s;
+}
+
+.linkedin-link i {
+    margin-right: 8px;
+}
+
+.linkedin-link:hover {
+    color: #005582;
+}
+
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
     .center-section h1 {
@@ -164,10 +266,25 @@ header {
 
     .header-container {
         flex-direction: column;
-        align-items: center; /* Center elements on smaller screens */
+        align-items: center;
     }
 
     .slider-menu nav li a {
-        font-size: 1rem; /* Slightly smaller font for mobile */
+        font-size: 1rem;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .details-section {
+        max-width: 90%;
+    }
+
+    .photo-section .profile-photo {
+        width: 150px;
+        height: 150px;
     }
 }
