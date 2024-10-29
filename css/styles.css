@@ -176,13 +176,13 @@ header {
 }
 
 .photo-section .profile-photo {
-    width: 180px; /* Slightly larger size */
-    height: 180px; /* Maintain aspect ratio */
+    width: 200px; /* Slightly larger size */
+    height: 250px; /* Maintain aspect ratio */
     border-radius: 50%; /* Circular shape */
     object-fit: cover;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border: 4px solid #f3c623; /* Colorful border for profile picture */
-    margin-left: 10px; /* Center alignment adjustment */
+    margin-left: 50px; /* Center alignment adjustment */
 }
 
 /* Right Part: Details Section */
