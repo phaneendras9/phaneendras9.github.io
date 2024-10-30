@@ -175,8 +175,17 @@ header {
     justify-content: center; /* Center the photo within the section */
     align-items: center;
 }
-
 .photo-section .profile-photo {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px; /* Rounded corners */
+    object-fit: cover;
+    padding: 5px; /* Space between image and border */
+    background: linear-gradient(45deg, #f3c623, #ff7b54); /* Gradient border */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* .photo-section .profile-photo {
     width: 220px; /* Large profile photo */
     height: 220px;
     border-radius: 50%;
@@ -184,7 +193,7 @@ header {
     border: 5px solid #f3c623; /* Colorful border */
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease; /* Smooth hover effect */
-}
+} */
 
 /* Hover effect */
 .photo-section .profile-photo:hover {
