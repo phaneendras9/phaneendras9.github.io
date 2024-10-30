@@ -410,45 +410,99 @@ header {
 
 /* Contact Section */
 #contact {
-    padding: 50px 20px;
-    background-color: #f9f9f9;
+    padding: 60px 20px;
+    background-color: #f4f4f9;
     color: #333;
     text-align: center;
 }
 
 .contact-container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .contact-container h2 {
     font-size: 2rem;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-transform: uppercase;
 }
 
-/* Contact Info */
-.contact-info p {
+.contact-intro {
     font-size: 1.1rem;
     color: #555;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
-.contact-info i {
-    color: #f3c623;
-    margin-right: 8px;
-}
-
-/* Contact Form */
-.contact-form {
+/* Contact Content Layout */
+.contact-content {
     display: flex;
-    flex-direction: column;
+    gap: 30px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Contact Details Card */
+.contact-details {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    flex: 1;
+    min-width: 300px;
+}
+
+.contact-details h3 {
+    font-size: 1.5rem;
+    color: #f3c623;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.contact-details p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-details i {
+    color: #f3c623;
+    margin-right: 10px;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
     gap: 15px;
     margin-top: 20px;
 }
 
-.form-group {
+.social-links a {
+    color: #333;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #f3c623;
+}
+
+/* Contact Form */
+.contact-form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form .form-group {
     display: flex;
     flex-direction: column;
 }
@@ -491,29 +545,9 @@ header {
     background-color: #333;
 }
 
-/* Social Links */
-.social-links {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    gap: 15px;
-}
 
-.social-links a {
-    color: #333;
-    font-size: 1.5rem;
-    transition: color 0.3s;
-}
+    
 
-.social-links a:hover {
-    color: #f3c623;
-}
-
- 
-   
-
-
-   
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
@@ -579,14 +613,16 @@ header {
     .education-container::after {
         left: 20px;
     }
-     .contact-container {
-        width: 100%;
-        padding: 0 10px;
+     .contact-content {
+        flex-direction: column;
+        align-items: center;
     }
 
+    .contact-details,
     .contact-form {
         width: 100%;
     }
+
 
 
 }
