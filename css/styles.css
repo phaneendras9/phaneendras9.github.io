@@ -265,6 +265,72 @@ header {
 .linkedin-link:hover {
     color: #005582;
 }
+/* Skills Section */
+#skills {
+    padding: 50px 20px;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.skills-container h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Skill Categories */
+.skill-category {
+    margin: 20px 0;
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    color: #f3c623;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Skill Item */
+.skill-category ul li {
+    background-color: #fff;
+    border: 2px solid #f3c623;
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.skill-category ul li:hover {
+    transform: translateY(-5px);
+}
+
+.skill-category ul li i {
+    color: #f3c623;
+    font-size: 1.2rem;
+}
+
+
+   
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
@@ -308,4 +374,13 @@ header {
         max-width: 90%;
         padding-left: 0; /* Remove padding for mobile */
     }
+     .skill-category ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skill-category ul li {
+        width: 80%; /* Full width on smaller screens */
+    }
+
 }
