@@ -329,6 +329,86 @@ header {
     font-size: 1.2rem;
 }
 
+/* Education Section */
+#education {
+    padding: 50px 20px;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.education-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.education-container h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+/* Education Item Styling */
+.education-item {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
+    position: relative;
+    padding-left: 40px;
+}
+
+.education-item::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: #f3c623;
+    border-radius: 50%;
+}
+
+.education-item .education-year {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #f3c623;
+    margin-right: 20px;
+    min-width: 100px;
+    text-align: left;
+}
+
+.education-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.institution {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Timeline Line */
+.education-container::after {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #f3c623;
+}
+
+
 
    
 
@@ -381,6 +461,20 @@ header {
 
     .skill-category ul li {
         width: 80%; /* Full width on smaller screens */
+    }
+     .education-item {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 0;
+    }
+
+    .education-year {
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .education-container::after {
+        left: 20px;
     }
 
 }
