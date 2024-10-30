@@ -175,29 +175,45 @@ header {
     justify-content: center; /* Center the photo within the section */
     align-items: center;
 }
-.photo-section .profile-photo {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    clip-path: polygon(25% 5%, 75% 5%, 95% 50%, 75% 95%, 25% 95%, 5% 50%);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Adds depth */
-    border: 4px solid #f3c623; /* Border for emphasis */
+
+/* Profile Photo Card - Updated Portfolio Style */
+.profile-photo-card {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    border-radius: 15px; /* Rounded corners for a card-like look */
+    overflow: hidden; /* Hides parts of the image outside rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Soft shadow for depth */
+    transition: transform 0.3s ease; /* Smooth transition effect */
 }
 
+.profile-photo-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
 
-/* .photo-section .profile-photo {
-    width: 220px; /* Large profile photo */
-    height: 220px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid #f3c623; /* Colorful border */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease; /* Smooth hover effect */
-} */
+.profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the card without stretching */
+    transition: opacity 0.3s ease;
+}
 
-/* Hover effect */
-.photo-section .profile-photo:hover {
-    transform: scale(1.05); /* Slight zoom */
+/* Optional overlay effect for a portfolio card look */
+.profile-photo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15); /* Subtle dark overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 15px; /* Matches the card's border radius */
+}
+
+.profile-photo-card:hover::before {
+    opacity: 1; /* Overlay appears on hover */
 }
 
 /* Right Part: Details Section */
@@ -228,40 +244,6 @@ header {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 15px;
-}
-
-/* Interests in About Section */
-.interests-section h3 {
-    font-size: 1.3rem;
-    color: #333;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.interests-section p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 10px;
-}
-
-.interests-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.interests-list li {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 1rem;
-    color: #333;
-    background: #f3f3f3;
-    padding: 8px 12px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* LinkedIn Button */
@@ -314,16 +296,16 @@ header {
     }
 
     .photo-section {
-        flex-basis: 100%;
+        flex-basis: 100%; /* Full width on smaller screens */
+    }
+
+    .profile-photo-card {
+        width: 140px; /* Adjusted size for mobile */
+        height: 140px;
     }
 
     .details-section {
         max-width: 90%;
         padding-left: 0; /* Remove padding for mobile */
-    }
-
-    .photo-section .profile-photo {
-        width: 140px; /* Adjust size for mobile */
-        height: 140px;
     }
 }
