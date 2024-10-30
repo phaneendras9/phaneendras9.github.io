@@ -178,12 +178,12 @@ header {
 .photo-section .profile-photo {
     width: 220px;
     height: 220px;
-    border-radius: 20px; /* Rounded corners */
     object-fit: cover;
-    padding: 5px; /* Space between image and border */
-    background: linear-gradient(45deg, #f3c623, #ff7b54); /* Gradient border */
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    clip-path: polygon(25% 5%, 75% 5%, 95% 50%, 75% 95%, 25% 95%, 5% 50%);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Adds depth */
+    border: 4px solid #f3c623; /* Border for emphasis */
 }
+
 
 /* .photo-section .profile-photo {
     width: 220px; /* Large profile photo */
