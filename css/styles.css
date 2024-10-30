@@ -158,11 +158,11 @@ header {
 .about-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-    gap: 40px;
+    gap: 20px;
     background-color: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
@@ -170,31 +170,32 @@ header {
 
 /* Left Part: Centered Profile Image */
 .photo-section {
+    flex-basis: 25%; /* Occupies 1/4 of the width */
     display: flex;
-    justify-content: center; /* Center the photo within the photo section */
+    justify-content: center; /* Center the photo within the section */
     align-items: center;
-    flex: 1; /* Allows the photo section to occupy most of the left side */
 }
 
 .photo-section .profile-photo {
-    width: 220px; /* Increase the width for a larger photo */
-    height: 220px; /* Maintain aspect ratio */
-    border-radius: 50%; /* Circular shape */
+    width: 220px; /* Large profile photo */
+    height: 220px;
+    border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    border: 5px solid #f3c623; /* Colorful border for profile picture */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    border: 5px solid #f3c623; /* Colorful border */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease; /* Smooth hover effect */
 }
 
-/* Hover effect to add interactivity */
+/* Hover effect */
 .photo-section .profile-photo:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05); /* Slight zoom */
 }
 
 /* Right Part: Details Section */
 .details-section {
-    max-width: 500px; /* Reduce max-width to balance with larger photo */
+    flex-basis: 70%; /* Occupies 3/4 of the width */
     color: #333;
+    padding-left: 20px; /* Spacing between photo and text */
 }
 
 .details-section h2 {
@@ -206,7 +207,7 @@ header {
 
 .quote {
     font-style: italic;
-    color: #f3c623; /* Colorful quote text */
+    color: #f3c623;
     font-size: 1.2rem;
     margin-bottom: 15px;
     border-left: 4px solid #f3c623;
@@ -303,12 +304,17 @@ header {
         text-align: center;
     }
 
+    .photo-section {
+        flex-basis: 100%;
+    }
+
     .details-section {
         max-width: 90%;
+        padding-left: 0; /* Remove padding for mobile */
     }
 
     .photo-section .profile-photo {
-        width: 140px; /* Adjusted size for mobile */
+        width: 140px; /* Adjust size for mobile */
         height: 140px;
     }
 }
