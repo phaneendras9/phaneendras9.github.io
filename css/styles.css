@@ -337,7 +337,7 @@ header {
 }
 
 .experience-container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -348,45 +348,48 @@ header {
     text-transform: uppercase;
 }
 
-.job-experience {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 30px;
-    text-align: left;
+/* Experience Timeline */
+.experience-timeline {
+    position: relative;
+    padding-left: 30px;
+    border-left: 3px solid #f3c623; /* Tree line */
 }
 
-.job-experience h3 {
+.experience-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 20px;
+}
+
+.experience-dot {
+    position: absolute;
+    left: -12px;
+    top: 0;
+    width: 15px;
+    height: 15px;
+    background-color: #f3c623;
+    border-radius: 50%;
+}
+
+.experience-content h3 {
     font-size: 1.5rem;
     color: #f3c623;
     margin-bottom: 5px;
+    text-align: left;
 }
 
-.job-experience h4 {
+.experience-content h4 {
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 5px;
+    text-align: left;
 }
 
-.job-duration {
+.experience-duration {
     font-size: 1rem;
     color: #999;
-    margin-bottom: 15px;
+    text-align: left;
 }
-
-.job-details {
-    list-style-type: disc;
-    padding-left: 20px;
-    color: #555;
-}
-
-.job-details li {
-    margin-bottom: 10px;
-    font-size: 1rem;
-}
-
-
     
 
 /* Education Section */
@@ -659,17 +662,19 @@ header {
     .skill-category ul li {
         width: 80%; /* Full width on smaller screens */
     }
-    .job-experience {
-        padding: 15px;
+     .experience-timeline {
+        padding-left: 20px;
+        border-left: 2px solid #f3c623;
     }
 
-    .job-experience h3 {
+    .experience-content h3 {
         font-size: 1.3rem;
     }
 
-    .job-details li {
-        font-size: 0.95rem;
+    .experience-duration {
+        font-size: 0.9rem;
     }
+
 
 
      .education-item {
