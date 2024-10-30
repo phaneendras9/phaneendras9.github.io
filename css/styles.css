@@ -328,6 +328,66 @@ header {
     color: #f3c623;
     font-size: 1.2rem;
 }
+/* Experience Section */
+#experience {
+    padding: 60px 20px;
+    background-color: #f4f4f9;
+    color: #333;
+    text-align: center;
+}
+
+.experience-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.experience-container h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+.job-experience {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+.job-experience h3 {
+    font-size: 1.5rem;
+    color: #f3c623;
+    margin-bottom: 5px;
+}
+
+.job-experience h4 {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.job-duration {
+    font-size: 1rem;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.job-details {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #555;
+}
+
+.job-details li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+
+    
 
 /* Education Section */
 #education {
@@ -599,6 +659,19 @@ header {
     .skill-category ul li {
         width: 80%; /* Full width on smaller screens */
     }
+    .job-experience {
+        padding: 15px;
+    }
+
+    .job-experience h3 {
+        font-size: 1.3rem;
+    }
+
+    .job-details li {
+        font-size: 0.95rem;
+    }
+
+
      .education-item {
         flex-direction: column;
         align-items: flex-start;
