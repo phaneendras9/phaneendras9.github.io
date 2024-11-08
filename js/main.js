@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectContainer = document.querySelector('.project-cards');
     const addProjectBtn = document.getElementById('addProjectBtn');
 
-    // Password for project deletion
-    const deletePassword = "Phaneendra@123";
+    // Password for project addition and deletion
+    const projectPassword = "Phaneendra@123";
 
     // Load dynamically added projects from local storage or set up an empty array
     let projects = JSON.parse(localStorage.getItem('projects')) || [];
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to delete a dynamically added project with password protection
     function deleteProject(index) {
         const enteredPassword = prompt('Enter password to delete this project:');
-        if (enteredPassword === deletePassword) {
+        if (enteredPassword === projectPassword) {
             projects.splice(index, 1);
             saveProjectsToLocalStorage(); // Save updated projects to local storage
             renderProjects(); // Re-render the updated project list
@@ -83,8 +83,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Event listener to add a new project
+    // Event listener to add a new project with password protection
     addProjectBtn.addEventListener('click', () => {
+        const enteredPassword = prompt('Enter password to add a new project:');
+        if (enteredPassword !== projectPassword) {
+            alert('Incorrect password. Project addition canceled.');
+            return; // Exit if the password is incorrect
+        }
+
+        // Proceed to add the project if the password is correct
         const title = prompt('Enter Project Title');
         if (!title) return; // Cancel if title is not provided
 
