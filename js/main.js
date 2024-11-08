@@ -5,14 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const projectContainer = document.querySelector('.project-cards');
     const addProjectBtn = document.getElementById('addProjectBtn');
 
-    // Sample data for projects
-    const projects = [
-        { title: 'Project 1', description: 'Description of project 1', link: 'project1.html' },
-        { title: 'Project 2', description: 'Description of project 2', link: 'project2.html' },
-    ];
-
-    // Define a password for deletion (should be securely handled in a real application)
+    // Password for project deletion
     const deletePassword = "Phaneendra@123";
+
+    // Load projects from local storage or set up an empty array
+    let projects = JSON.parse(localStorage.getItem('projects')) || [];
+
+    // Function to save projects to local storage
+    function saveProjectsToLocalStorage() {
+        localStorage.setItem('projects', JSON.stringify(projects));
+    }
 
     // Toggle slider menu when hamburger is clicked
     hamburger.addEventListener('click', (event) => {
@@ -30,20 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Smooth scroll and close slider when any link inside it is clicked
     links.forEach(link => {
         link.addEventListener('click', (event) => {
-            event.preventDefault(); // Prevent default link jump
-            const targetId = link.getAttribute('href'); // Get href attribute value
-            const targetSection = document.querySelector(targetId); // Select the target section
+            event.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
 
             if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to section
-                sliderMenu.classList.remove('active'); // Close the slider
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+                sliderMenu.classList.remove('active');
             }
         });
     });
 
     // Function to render projects
     function renderProjects() {
-        projectContainer.innerHTML = '';
+        projectContainer.innerHTML = ''; // Clear existing projects
+
         projects.forEach((project, index) => {
             const projectCard = document.createElement('div');
             projectCard.classList.add('project-card');
@@ -51,9 +54,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
                 <button class="view-project-btn" onclick="window.location.href='${project.link}'">View Project</button>
-                <button class="delete-project-btn" onclick="deleteProject(${index})">Delete</button>
+                <button class="delete-project-btn" data-index="${index}">Delete</button>
             `;
             projectContainer.appendChild(projectCard);
+        });
+
+        // Attach delete event listeners to all delete buttons after rendering
+        document.querySelectorAll('.delete-project-btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                const index = event.target.getAttribute('data-index');
+                deleteProject(index);
+            });
         });
     }
 
@@ -62,7 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const enteredPassword = prompt('Enter password to delete this project:');
         if (enteredPassword === deletePassword) {
             projects.splice(index, 1);
-            renderProjects();
+            saveProjectsToLocalStorage(); // Save updated projects to local storage
+            renderProjects(); // Re-render the updated project list
             alert('Project deleted successfully.');
         } else {
             alert('Incorrect password. Project deletion canceled.');
@@ -72,13 +84,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listener to add a new project
     addProjectBtn.addEventListener('click', () => {
         const title = prompt('Enter Project Title');
+        if (!title) return; // If title is canceled or empty, cancel addition
+
         const description = prompt('Enter Project Description');
+        if (!description) return; // If description is canceled or empty, cancel addition
+
         const link = prompt('Enter Project Link');
-        if (title && description && link) {
-            projects.push({ title, description, link });
-            renderProjects();
-        }
+        if (!link) return; // If link is canceled or empty, cancel addition
+
+        // Add the new project and save it to local storage
+        projects.push({ title, description, link });
+        saveProjectsToLocalStorage(); // Save updated projects to local storage
+        renderProjects(); // Render the updated list
     });
 
-    renderProjects(); // Initial render
+    renderProjects(); // Initial render on page load
 });
