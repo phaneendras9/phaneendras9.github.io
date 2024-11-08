@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Password for project deletion
     const deletePassword = "Phaneendra@123";
 
-    // Load projects from local storage or set up an empty array
+    // Load dynamically added projects from local storage or set up an empty array
     let projects = JSON.parse(localStorage.getItem('projects')) || [];
 
     // Function to save projects to local storage
@@ -43,23 +43,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Function to render projects
+    // Function to render projects (only dynamically added projects)
     function renderProjects() {
-        projectContainer.innerHTML = ''; // Clear existing projects
+        // Remove dynamically added project cards before re-rendering
+        projectContainer.querySelectorAll('.dynamic-project').forEach(el => el.remove());
 
         projects.forEach((project, index) => {
             const projectCard = document.createElement('div');
-            projectCard.classList.add('project-card');
+            projectCard.classList.add('project-card', 'dynamic-project'); // Mark as dynamically added
+
             projectCard.innerHTML = `
                 <h3>${project.title}</h3>
                 <p>${project.description}</p>
-                <button class="view-project-btn" onclick="window.location.href='${project.link}'">View Project</button>
+                <a href="${project.link}" class="view-project-btn" target="_blank">View Project</a>
                 <button class="delete-project-btn" data-index="${index}">Delete</button>
             `;
             projectContainer.appendChild(projectCard);
         });
 
-        // Attach delete event listeners to all delete buttons after rendering
+        // Attach delete event listeners to all delete buttons for dynamically added projects
         document.querySelectorAll('.delete-project-btn').forEach(button => {
             button.addEventListener('click', (event) => {
                 const index = event.target.getAttribute('data-index');
@@ -68,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Function to delete a project with password protection
+    // Function to delete a dynamically added project with password protection
     function deleteProject(index) {
         const enteredPassword = prompt('Enter password to delete this project:');
         if (enteredPassword === deletePassword) {
@@ -84,15 +86,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Event listener to add a new project
     addProjectBtn.addEventListener('click', () => {
         const title = prompt('Enter Project Title');
-        if (!title) return; // If title is canceled or empty, cancel addition
+        if (!title) return; // Cancel if title is not provided
 
         const description = prompt('Enter Project Description');
-        if (!description) return; // If description is canceled or empty, cancel addition
+        if (!description) return; // Cancel if description is not provided
 
         const link = prompt('Enter Project Link');
-        if (!link) return; // If link is canceled or empty, cancel addition
+        if (!link) return; // Cancel if link is not provided
 
-        // Add the new project and save it to local storage
+        // Add the new project to projects array and save to local storage
         projects.push({ title, description, link });
         saveProjectsToLocalStorage(); // Save updated projects to local storage
         renderProjects(); // Render the updated list
