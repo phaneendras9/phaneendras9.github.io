@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
 
     // Define a password for deletion (should be securely handled in a real application)
-    const deletePassword = "yourSecurePassword";
+    const deletePassword = "Phaneendra@123";
 
     // Toggle slider menu when hamburger is clicked
     hamburger.addEventListener('click', (event) => {
