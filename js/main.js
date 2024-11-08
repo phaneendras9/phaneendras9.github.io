@@ -1,42 +1,43 @@
-// Existing code for hamburger menu and slider
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const sliderMenu = document.getElementById('slider-menu');
-    const links = document.querySelectorAll('.slider-menu nav a'); // All menu links
+    const links = document.querySelectorAll('.slider-menu nav a');
 
     // Toggle slider menu when hamburger is clicked
     hamburger.addEventListener('click', (event) => {
-        event.stopPropagation(); // Prevents the click from closing the menu immediately
-        sliderMenu.classList.toggle('active'); // Toggle 'active' class to open/close the slider
+        event.stopPropagation();
+        sliderMenu.classList.toggle('active');
     });
 
     // Close slider menu when clicking outside of it
     document.addEventListener('click', (event) => {
         if (!sliderMenu.contains(event.target) && !hamburger.contains(event.target)) {
-            sliderMenu.classList.remove('active'); // Remove 'active' class to close the slider
+            sliderMenu.classList.remove('active');
         }
     });
 
     // Close slider when any link inside it is clicked
     links.forEach(link => {
         link.addEventListener('click', () => {
-            sliderMenu.classList.remove('active'); // Close menu after clicking a link
+            sliderMenu.classList.remove('active');
         });
     });
 
-    // Project section functionality
     const projectContainer = document.querySelector('.project-cards');
     const addProjectBtn = document.getElementById('addProjectBtn');
 
-    // Sample data for projects (can be replaced with dynamic data)
+    // Sample data for projects
     const projects = [
         { title: 'Project 1', description: 'Description of project 1', link: 'project1.html' },
         { title: 'Project 2', description: 'Description of project 2', link: 'project2.html' },
     ];
 
+    // Define a password for deletion (should be securely handled in a real application)
+    const deletePassword = "yourSecurePassword";
+
     // Function to render projects
     function renderProjects() {
-        projectContainer.innerHTML = ''; // Clear current projects
+        projectContainer.innerHTML = '';
         projects.forEach((project, index) => {
             const projectCard = document.createElement('div');
             projectCard.classList.add('project-card');
@@ -50,10 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Function to delete a project
+    // Function to delete a project with password protection
     function deleteProject(index) {
-        projects.splice(index, 1);
-        renderProjects();
+        const enteredPassword = prompt('Enter password to delete this project:');
+        if (enteredPassword === deletePassword) {
+            projects.splice(index, 1);
+            renderProjects();
+            alert('Project deleted successfully.');
+        } else {
+            alert('Incorrect password. Project deletion canceled.');
+        }
     }
 
     // Event listener to add a new project
